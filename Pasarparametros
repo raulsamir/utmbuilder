@@ -16,15 +16,13 @@
         // Verificar si se encontró ":" en la URL
         if (index !== -1) {
             // Extraer el valor después del siguiente ":"
-            const valor = url.substring(index + 1);
+            let valor = url.substring(index + 1);
 
-            // Convertir el valor a mayúsculas o minúsculas (puedes elegir uno de estos)
-            const valorMayusculas = valor.toUpperCase();
-            // const valorMinusculas = valor.toLowerCase();
+            // Reemplazar guiones con espacios
+            valor = valor.replace(/-/g, ' ');
 
-            // Mostrar el valor convertido en el elemento HTML con el id "resultado"
-            document.getElementById('resultado').innerText = valorMayusculas;
-            // document.getElementById('resultado').innerText = valorMinusculas;
+            // Mostrar el valor en el elemento HTML con el id "resultado"
+            document.getElementById('resultado').innerText = valor;
         } else {
             // Si no se encontró ":" en la URL, mostrar un mensaje de error
             document.getElementById('resultado').innerText = 'No se encontró ninguna palabra después de ":" en la URL.';
