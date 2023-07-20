@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obtener parámetro desde URL</title>
+</head>
+<body>
+    <div id="resultado"></div>
+
+    <script>
+        // Obtener la URL actual sin el "https://"
+        const url = window.location.href.replace('https://', '');
+
+        // Buscar la posición del siguiente ":" en la URL
+        const index = url.indexOf(':');
+
+        // Verificar si se encontró ":" en la URL
+        if (index !== -1) {
+            // Extraer el valor después del siguiente ":"
+            const valor = url.substring(index + 1);
+
+            // Mostrar el valor en el elemento HTML con el id "resultado"
+            document.getElementById('resultado').innerText = valor;
+        } else {
+            // Si no se encontró ":" en la URL, mostrar un mensaje de error
+            document.getElementById('resultado').innerText = 'No se encontró ninguna palabra después de ":" en la URL.';
+        }
+    </script>
+</body>
+</html>
