@@ -18,8 +18,13 @@
             // Extraer el valor después del siguiente ":"
             const valor = url.substring(index + 1);
 
-            // Mostrar el valor en el elemento HTML con el id "resultado"
-            document.getElementById('resultado').innerText = valor;
+            // Convertir el valor a mayúsculas o minúsculas (puedes elegir uno de estos)
+            const valorMayusculas = valor.toUpperCase();
+            // const valorMinusculas = valor.toLowerCase();
+
+            // Mostrar el valor convertido en el elemento HTML con el id "resultado"
+            document.getElementById('resultado').innerText = valorMayusculas;
+            // document.getElementById('resultado').innerText = valorMinusculas;
         } else {
             // Si no se encontró ":" en la URL, mostrar un mensaje de error
             document.getElementById('resultado').innerText = 'No se encontró ninguna palabra después de ":" en la URL.';
