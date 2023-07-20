@@ -21,6 +21,9 @@
             // Reemplazar guiones con espacios
             valor = valor.replace(/-/g, ' ');
 
+            // Convertir la primera letra a mayúscula y el resto a minúscula
+            valor = valor.charAt(0).toUpperCase() + valor.slice(1).toLowerCase();
+
             // Mostrar el valor en el elemento HTML con el id "resultado"
             document.getElementById('resultado').innerText = valor;
         } else {
